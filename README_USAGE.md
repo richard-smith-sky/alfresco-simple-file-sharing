@@ -23,7 +23,7 @@
 
 ## Running a local test
 1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
-2. In another shell window, navigate to the project directory and run command "**g test**"
+2. In another shell window, navigate to the project directory and run command "**grunt test**"
 
 ## Configuring your machine to run a cloud test against BrowserStack
 If this is the first time you have ever run a test against BrowserStack you will need to perform a configuration process as follows:
@@ -34,7 +34,7 @@ If this is the first time you have ever run a test against BrowserStack you will
 4. [Download](https://www.browserstack.com/local-testing#command-line) and run the appropriate application to setup a Local Testing connection from BrowserStack
 
 ## Running a cloud test (BrowserStack)
-1. Open a shell window, navigate to the project directory and run command "**g test_bs**"
+1. Open a shell window, navigate to the project directory and run command "**grunt test_bs**"
 
 ## Notes
 - You can terminate the selenium process when you have finished local testing
