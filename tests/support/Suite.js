@@ -44,7 +44,7 @@ define({
     * @type {String}
     * @optional
     */
-   sessionKey: "RDS",
+   sessionKey: "",
 
    /**
     * This is the array of functional tests
