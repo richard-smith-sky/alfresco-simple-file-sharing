@@ -28,6 +28,11 @@ This file contains examples of Intern / Leadfoot / Chai syntax that you might fi
 - [Test templates](#test-templates)
     - [One complete test](#one-complete-test)
     - [A complete test file with setup and teardown examples](#a-complete-test-file-with-setup-and-teardown-examples)
+- [Useful tools during development](#useful-tools-during-development)
+    - [SelectorGadget for Chrome](#selectorgadget-for-chrome)
+    - [CSS Selector Tester for Chrome](#css-selector-tester-for-chrome)
+    - [FirePath for FireFox](#firepath-for-firefox)
+    - [Firefinder for FireFox](#firefinder-for-firefox)
 - [Further resources](#further-resources)
 
 <!-- /MarkdownTOC -->
@@ -77,7 +82,7 @@ All ids and css selectors should be specified at the top of the test file to mak
 ## Element interactions
 
 ### Get the text
-This example gets the visible text at the Element defined by '*selector.MY_ELEMENT_ID*'. It then **expects** that it should be equal in value to the property defined at '*Properties.someText*' and shows an error message if it is not.
+This example gets the visible text at the Element defined by '*selector.MY_ELEMENT_ID*'. It then **expects** that it should be equal in value to the property defined by *Properties.someText* and shows an error message if it is not.
 
 ```javascript
 .findById(selector.MY_ELEMENT_ID)
@@ -112,7 +117,7 @@ This will find the '*name*' property of the Element defined by selector '*MY_INP
 Whenever a find action is performed, and assuming that the Element in question is found, then the driver is scoped specifically to that Element. In a simple test that might be fine if only one interaction and one assertion is expected. The framework typically terminates scope after each test automatically. However, if a more complex test is required it may be necessary to '**end()**' the initial Element scope.
 
 ### Single Element test
-This will test the '*alt*' property of the Element defined by the selector ID '*MY_ELEMENT_ID*' and error if it is not equal to '*Properties.testAltText*'
+This will test the '*alt*' property of the Element defined by the selector ID '*MY_ELEMENT_ID*' and error if it is not equal to to the value defined by *Properties.testAltText*
 
 ```javascript
 .findByID(selector.MY_ELEMENT_ID)
@@ -324,6 +329,24 @@ This is a complete test file with a copyright statement, an author (please inclu
     1. In this example **setup** and **teardown** contain Step functions which are utility functions written in dependecy file Steps.js. Here they perform simple login, navigate and logout functions.
     2. **beforeEach** is a function which runs before each named test function. It performs the *browser.end()* so that we don't have to write that after every find in a simple test.
 5. One named test containing two finds and assertions using Chai.expect.
+
+## Useful tools during development
+
+### SelectorGadget for Chrome
+SelectorGadget is an open source tool that makes CSS selector generation and discovery on complicated sites a breeze.
+<https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb>
+
+### CSS Selector Tester for Chrome
+Test your css selector by using this quick script.
+<https://chrome.google.com/webstore/detail/css-selector-tester/bbklnaodgoocmcdejoalmbjihhdkbfon>
+ 
+### FirePath for FireFox
+FirePath is a Firebug extension that adds a development tool to edit, inspect and generate XPath 1.0 expressions, CSS 3 selectors and JQuery selectors.
+<https://addons.mozilla.org/en-US/firefox/addon/firepath/>
+
+### Firefinder for FireFox
+Finds HTML elements matching chosen CSS selector(s) or XPath expression
+<https://addons.mozilla.org/en-US/firefox/addon/firefinder-for-firebug/>
 
 ## Further resources
 
