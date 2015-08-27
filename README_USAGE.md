@@ -17,9 +17,11 @@
 
 ## Installation
 1. Open a shell window and navigate to the project directory
-2. Run command "**npm install**" to download the node packages defined in package.json
-3. Run command "**npm install selenium-standalone@latest -g**" to download selenium-standalone, globally
-4. Run command "**selenium-standalone install**" to finish the installation of selenium-standalone
+2. Run command "**npm install grunt@latest -g**" to download grunt, globally
+3. Run command "**npm install grunt-cli@latest -g**" to download grunt-cli, globally
+4. Run command "**npm install selenium-standalone@latest -g**" to download selenium-standalone, globally
+5. Run command "**selenium-standalone install**" to finish the installation of selenium-standalone
+6. Run command "**npm install**" to download the node packages defined in package.json
 
 ## Running a local test
 1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
