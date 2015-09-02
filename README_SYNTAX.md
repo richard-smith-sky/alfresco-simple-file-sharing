@@ -278,44 +278,47 @@ define(["intern!object",
         "utils/Steps"],  
         function (registerSuite, expect, require, TestUtils, Steps) {
 
-    var browser,
-        selector = {
-            ADMIN_CONSOLE_MENU: "div.tools-link ul",
-            ADMIN_CONSOLE_MENU_ITEM: "div.tools-link ul li"
+    var selector = {
+        ADMIN_CONSOLE_MENU: "div.tools-link ul",
+        ADMIN_CONSOLE_MENU_ITEM: "div.tools-link ul li"
+    };
+
+    registerSuite(function() {
+        var browser;
+        
+        return {
+            name: "Admin console test",
+    
+            setup: function() {
+                browser = this.remote;
+                browser = Steps.loginAs(browser, "admin");
+                browser = Steps.gotoAdminConsole(browser);
+                return browser;
+            },
+    
+            teardown: function() {
+                return Steps.logout(browser);
+            },
+    
+            beforeEach: function() {
+                browser.end();
+            },
+    
+            "Test admin console menus": function() {
+                return browser
+    
+                .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU)
+                    .then(function (menus) {
+                        expect(menus).to.have.length.of(3, "An incorrect number of admin menus is seen");
+                    })
+                    .end()
+    
+                .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU_ITEM)
+                    .then(function (menuItems) {
+                        expect(menuItems).to.have.length.of(9, "An incorrect number of admin menu items is seen");
+                    });
+            }
         };
-
-    registerSuite({
-        name: "Admin console test",
-
-        setup: function() {
-            browser = this.remote;
-            browser = Steps.loginAs(browser, "admin");
-            browser = Steps.gotoAdminConsole(browser);
-            return browser;
-        },
-
-        teardown: function() {
-            return Steps.logout(browser);
-        },
-
-        beforeEach: function() {
-            browser.end();
-        },
-
-        "Test admin console menus": function() {
-            return browser
-
-            .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU)
-                .then(function (menus) {
-                    expect(menus).to.have.length.of(3, "An incorrect number of admin menus is seen");
-                })
-                .end()
-
-            .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU_ITEM)
-                .then(function (menuItems) {
-                    expect(menuItems).to.have.length.of(9, "An incorrect number of admin menu items is seen");
-                });
-        }
     });
 });
 ```
