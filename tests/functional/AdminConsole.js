@@ -28,43 +28,48 @@ define(["intern!object",
         "utils/Steps"],  
         function (registerSuite, assert, expect, require, TestUtils, Steps) {
 
-   var browser,
-      selector = {
+   var selector = {
          ADMIN_CONSOLE_MENU: "div.tools-link ul",
          ADMIN_CONSOLE_MENU_ITEM: "div.tools-link ul li"
       };
 
-   registerSuite({
-      name: "Admin console test",
+   registerSuite(function() {
+      
+      var browser;
 
-      setup: function() {
-         browser = this.remote;
-         browser = Steps.loginAs(browser, "admin");
-         browser = Steps.gotoAdminConsole(browser);
-         return browser;
-      },
+      return {
 
-      teardown: function() {
-         return Steps.logout(browser);
-      },
+         name: "Admin console test",
 
-      beforeEach: function() {
-         browser.end();
-      },
+         setup: function() {
+            browser = this.remote;
+            browser = Steps.loginAs(browser, "admin");
+            browser = Steps.gotoAdminConsole(browser);
+            return browser;
+         },
 
-      "Test admin console menus": function() {
-         return browser
+         teardown: function() {
+            return Steps.logout(browser);
+         },
 
-         .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU)
-            .then(function (menus) {
-               expect(menus).to.have.length.of(3, "An incorrect number of admin menus is seen");
-            })
-            .end()
+         beforeEach: function() {
+            browser.end();
+         },
 
-         .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU_ITEM)
-            .then(function (menuItems) {
-               expect(menuItems).to.have.length.of(9, "An incorrect number of admin menu items is seen");
-            });
-      }
+         "Test admin console menus": function() {
+            return browser
+
+            .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU)
+               .then(function (menus) {
+                  expect(menus).to.have.length.of(3, "An incorrect number of admin menus is seen");
+               })
+               .end()
+
+            .findAllByCssSelector(selector.ADMIN_CONSOLE_MENU_ITEM)
+               .then(function (menuItems) {
+                  expect(menuItems).to.have.length.of(9, "An incorrect number of admin menu items is seen");
+               });
+         }
+      };
    });
 });

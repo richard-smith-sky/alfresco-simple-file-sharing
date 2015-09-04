@@ -29,46 +29,51 @@ define(["intern!object",
         "properties/Properties"],  
         function (registerSuite, assert, expect, require, TestUtils, Steps, Properties) {
 
-   var browser,
-      selector = {
+   var selector = {
          HEADER_LOGO: "#HEADER_LOGO img",
          HEADER_TITLE: "#HEADER_TITLE"
       };
 
-   registerSuite({
-      name: "Share Header test",
+   registerSuite(function() {
+      
+      var browser;
 
-      setup: function() {
-         browser = this.remote;
-         return Steps.loginAs(browser, "admin");
-      },
+      return {
 
-      teardown: function() {
-         return Steps.logout(browser);
-      },
+         name: "Share Header test",
 
-      beforeEach: function() {
-         browser.end();
-      },
+         setup: function() {
+            browser = this.remote;
+            return Steps.loginAs(browser, "admin");
+         },
 
-      "Test share header logo": function() {
-         return browser
+         teardown: function() {
+            return Steps.logout(browser);
+         },
 
-         .findByCssSelector(selector.HEADER_LOGO)
-         .getProperty("alt")
-            .then(function(altText) {
-               expect(altText).to.equal(Properties.shareHeaderLogoAltText, "Share header logo has incorrect alt text");
-            });
-      },
+         beforeEach: function() {
+            browser.end();
+         },
 
-      "Test share dashboard title": function() {
-         return browser
+         "Test share header logo": function() {
+            return browser
 
-         .findByCssSelector(selector.HEADER_TITLE)
-            .getVisibleText()
-            .then(function(title) {
-               expect(title).to.equal(Properties.shareHeaderTitle, "Share dashboard title is wrong");
-            });
-      }
+            .findByCssSelector(selector.HEADER_LOGO)
+            .getProperty("alt")
+               .then(function(altText) {
+                  expect(altText).to.equal(Properties.shareHeaderLogoAltText, "Share header logo has incorrect alt text");
+               });
+         },
+
+         "Test share dashboard title": function() {
+            return browser
+
+            .findByCssSelector(selector.HEADER_TITLE)
+               .getVisibleText()
+               .then(function(title) {
+                  expect(title).to.equal(Properties.shareHeaderTitle, "Share dashboard title is wrong");
+               });
+         }
+      };
    });
 });

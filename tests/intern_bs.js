@@ -98,7 +98,7 @@ define(["./support/Suite",
       ],
 
       // Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
-      maxConcurrency: 1,
+      maxConcurrency: 5,
 
       // Dig Dug tunnel handler
       tunnel: "BrowserStackTunnel",
