@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
    // Test tasks
    grunt.registerTask("test", ["waitServer:application", "waitServer:selenium", "clean:testScreenshots", "intern:local"]);
+   grunt.registerTask("test_debug", ["waitServer:application", "waitServer:selenium", "run:nodeInspector", "clean:testScreenshots", "open:nodeInspector", "run:internDebug"]);
    grunt.registerTask("test_bs", ["waitServer:application", "clean:testScreenshots", "intern:bs"]);
 
    // Notifications

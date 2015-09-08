@@ -110,23 +110,23 @@ define(["./support/Suite",
          packages: [
             {
                name: "config",
-               location: "./tests/support/config/cloud"
+               location: "tests/support/config/cloud"
             },
             {
                name: "dojo",
-               location: "./node_modules/dojo"
+               location: "node_modules/dojo"
             },
             {
                name: "properties",
-               location: "./tests/support/config/properties"
+               location: "tests/support/config/properties"
             },
             {
                name: "reporters",
-               location: "./tests/support/reporters"
+               location: "tests/support/reporters"
             },
             {
                name: "utils",
-               location: "./tests/support/utils"
+               location: "tests/support/utils"
             }
          ]
       },

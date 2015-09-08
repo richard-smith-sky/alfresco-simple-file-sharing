@@ -5,6 +5,7 @@
 - [Prerequisits](#prerequisits)
 - [Installation](#installation)
 - [Running a local test](#running-a-local-test)
+- [Running a local test with debugging enabled](#running-a-local-test-with-debugging-enabled)
 - [Configuring your machine to run a cloud test against BrowserStack](#configuring-your-machine-to-run-a-cloud-test-against-browserstack)
 - [Running a cloud test (BrowserStack)](#running-a-cloud-test-browserstack)
 - [Notes](#notes)
@@ -29,6 +30,13 @@
 ## Running a local test
 1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
 2. In another shell window, navigate to the project directory and run command "**grunt test**"
+
+## Running a local test with debugging enabled
+**Note**: A test run in debug mode will look identical to a local test unless you drop a breakpoint into your code. Try adding '**debugger;**' as a line entry anywhere within a closure in your code.
+
+1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
+2. In another shell window, navigate to the project directory and run command "**grunt test_debug**"
+3. Node inspector will start automatically. When the launched debug session connects to the test run, you will need to click the 'Resume script execution (F8).' button to proceed.
 
 ## Configuring your machine to run a cloud test against BrowserStack
 If this is the first time you have ever run a test against BrowserStack you will need to perform a configuration process as follows:

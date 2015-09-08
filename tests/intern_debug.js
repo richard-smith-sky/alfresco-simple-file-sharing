@@ -31,14 +31,7 @@ define(["./support/Suite"],
             chromeOptions: {
                excludeSwitches: ["ignore-certificate-errors"]
             }
-         },
-         {
-            browserName: "firefox"
          }
-         // ,
-         // {
-         //    browserName: "internet explorer"
-         // }
       ],
 
       // Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
@@ -88,7 +81,7 @@ define(["./support/Suite"],
       functionalSuites: Suite.functionalTests,
 
       // A regular expression matching URLs to files that should not be included in code coverage analysis
-      excludeInstrumentation: /^(?:tests|node_modules)\//,
+      excludeInstrumentation: /.*/,
 
       // An array of code coverage reporters to invoke
       reporters: [
