@@ -13,7 +13,10 @@
 <!-- /MarkdownTOC -->
 
 ## Prerequisits
+**Note**: This proof is designed to operate against Alfresco Share, running locally on port 8080.
 * [Download](https://nodejs.org/) and install NodeJS
+* [Download](https://www.alfresco.com/products/community/download) an up-to-date Alfresco installer, install and start it
+* Create a project directory on your system and clone this repository into it
 
 ## Installation
 1. Open a shell window and navigate to the project directory
