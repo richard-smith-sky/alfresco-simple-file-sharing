@@ -28,14 +28,12 @@
 6. Run command "**npm install**" to download the node packages defined in package.json
 
 ## Running a local test
-1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
-2. In another shell window, navigate to the project directory and run command "**grunt test**"
+1. Open a shell window, navigate to the project directory and run command "**grunt test**"
 
 ## Running a local test with debugging enabled
 **Note**: A test run in debug mode will look identical to a local test unless you drop a breakpoint into your code. Try adding '**debugger;**' as a line entry anywhere within a closure in your code.
 
-1. Open a shell window and run "**selenium-standalone start**" to launch a standalone selenium session
-2. In another shell window, navigate to the project directory and run command "**grunt test_debug**"
+1. Open a shell window, navigate to the project directory and run command "**grunt test_debug**"
 3. Node inspector will start automatically. When the launched debug session connects to the test run, you will need to click the 'Resume script execution (F8).' button to proceed.
 
 ## Configuring your machine to run a cloud test against BrowserStack
