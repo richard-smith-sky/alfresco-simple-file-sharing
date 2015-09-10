@@ -24,9 +24,10 @@
 1. Open a shell window and navigate to the project directory
 2. Run command "**npm install grunt@latest -g**" to download grunt, globally
 3. Run command "**npm install grunt-cli@latest -g**" to download grunt-cli, globally
-4. Run command "**npm install selenium-standalone@latest -g**" to download selenium-standalone, globally
-5. Run command "**selenium-standalone install**" to finish the installation of selenium-standalone
-6. Run command "**npm install**" to download the node packages defined in package.json
+4. Run command "**npm install node-inspector@latest -g**" to download node-inspector, globally
+5. Run command "**npm install selenium-standalone@latest -g**" to download selenium-standalone, globally
+6. Run command "**selenium-standalone install**" to finish the installation of selenium-standalone
+7. Run command "**npm install**" to download the node packages defined in package.json
 
 ## Running a local test
 1. Open a shell window, navigate to the project directory and run command "**grunt test**"
@@ -35,7 +36,7 @@
 **Note**: A test run in debug mode will look identical to a local test unless you drop a breakpoint into your code. Try adding '**debugger;**' as a line entry anywhere within a closure in your code.
 
 1. Open a shell window, navigate to the project directory and run command "**grunt test_debug**"
-3. Node inspector will start automatically. When the launched debug session connects to the test run, you will need to click the 'Resume script execution (F8).' button to proceed.
+2. Node inspector will start automatically. When the launched debug session connects to the test run, you will need to click the 'Resume script execution (F8).' button to proceed.
 
 ## Configuring your machine to run a cloud test against BrowserStack
 If this is the first time you have ever run a test against BrowserStack you will need to perform a configuration process as follows:
