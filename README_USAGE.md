@@ -9,6 +9,7 @@
 - [Configuring your machine to run a cloud test against BrowserStack](#configuring-your-machine-to-run-a-cloud-test-against-browserstack)
 - [Running a cloud test (BrowserStack)](#running-a-cloud-test-browserstack)
 - [Notes](#notes)
+- [Tooling](#tooling)
 - [Resources](#resources)
 
 <!-- /MarkdownTOC -->
@@ -48,10 +49,15 @@ If this is the first time you have ever run a test against BrowserStack you will
 1. Open a shell window, navigate to the project directory and run command "**grunt test_bs**"
 
 ## Notes
-- You can terminate the selenium process when you have finished local testing
 - Whilst tests are running locally you can watch the selenium console here: <http://localhost:4444/wd/hub/static/resource/hub.html>
 - Selenium should not be running locally if you are running a cloud test
 - Whilst cloud tests are running you can watch them on BrowserStack here: <https://www.browserstack.com/automate>
+
+## Tooling
+The test commands shown above are all run with Grunt, which is a pretty common task runner. Whichever IDE you use, there is a good chance that it either supports Grunt commands natively or there is a plugin that will allow that. Being able to launch test runs from the IDE speeds up the test authoring process considerably. Try the following:
+* **Eclipse** users can install [JavaScript Build Eclipse](http://marketplace.eclipse.org/content/javascript-build-eclipse)
+* **Sublime Text** users can use [Grunt](https://packagecontrol.io/packages/Grunt)
+* **WebStorm** and **IntelliJ** users have native support for grunt tasks
 
 ## Resources
 * [Documentation for Intern](https://theintern.github.io/) - A complete framework for testing Web sites and applications
